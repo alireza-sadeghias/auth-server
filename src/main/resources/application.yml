@@ -1,0 +1,40 @@
+server:
+  port: 9000
+taco:
+  orders:
+    pageSize: 10
+  taco:
+    page-size:15
+spring:
+  datasource:
+    generate-unique-name: false
+    name: auth-server
+    url: jdbc:mysql://localhost:3306/auth
+    username: sample
+    password: sample
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    rest:
+      base-path: /data-api
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          facebook:
+#            clientId: 1294461670684174
+#            clientSecret: a6d2f7dfeaf9352829d4f56a09a0c49c
+#            scope: email, public_profile
+logging:
+  file:
+    path: /var/logs/
+    name: TacoCloud.log
+  level:
+    root: trace
+    org.springframework.security: trace
+    com.alireza: trace
+    org.apache.tomcat.util: info
